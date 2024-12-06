@@ -13,7 +13,7 @@ found [here](https://www.graalvm.org/latest/reference-manual/native-image/dynami
 ## Usage
 
 #### 2) Add dependency into your project:
-   **Gradle (Groovy)**
+    **Gradle (Groovy)**
 
 ```
 implementation 'com.github.ricantech:protobuf-graalvm-feature:${version}'
