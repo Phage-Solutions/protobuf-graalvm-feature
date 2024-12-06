@@ -31,6 +31,16 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
+tasks.register<Jar>("sourcesJar") {
+    from(sourceSets["main"].allSource)
+    archiveClassifier.set("sources")
+}
+
+tasks.register<Jar>("javadocJar") {
+    from(tasks.javadoc)
+    archiveClassifier.set("javadoc")
+}
+
 publishing {
     repositories {
         maven {
@@ -44,9 +54,16 @@ publishing {
     }
     publications {
         create<MavenPublication>("maven") {
+            groupId = "sk.phage"
+            artifactId = project.name
+
             from(components["java"])
-            artifact(tasks.named("javadocJar").get())
+
+            // Include the sources JAR
             artifact(tasks.named("sourcesJar").get())
+
+            // Optionally include the JavaDocs JAR
+            artifact(tasks.named("javadocJar").get())
         }
     }
 }
