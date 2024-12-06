@@ -18,10 +18,10 @@ dependencies {
 
 }
 
-java {
-    withJavadocJar()
-    withSourcesJar()
+group = "sk.phage"
+version = project.version
 
+java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
