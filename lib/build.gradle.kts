@@ -55,7 +55,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "sk.phage"
-            artifactId = project.name
+            artifactId = rootProject.name
 
             from(components["java"])
 
