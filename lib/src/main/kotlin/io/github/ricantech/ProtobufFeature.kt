@@ -1,5 +1,6 @@
 package io.github.ricantech
 
+import com.google.protobuf.GeneratedMessage
 import com.google.protobuf.GeneratedMessageV3
 import com.google.protobuf.ProtocolMessageEnum
 import io.github.ricantech.utils.ReflectionRegistrationUtils
@@ -33,13 +34,13 @@ class ProtobufFeature : Feature {
     ) {
         val ref = packageNameWithReflections.second
         val toRegister = mapOf(
-            ref.getSubTypesOf(GeneratedMessageV3::class.java) to ({ clazz: Class<out Any> ->
+            ref.getSubTypesOf(GeneratedMessage::class.java) to ({ clazz: Class<out Any> ->
                 ReflectionRegistrationUtils.registerAll(
                     access,
                     clazz.name
                 )
             }),
-            ref.getSubTypesOf(GeneratedMessageV3.Builder::class.java) to ({ clazz: Class<out Any> ->
+            ref.getSubTypesOf(GeneratedMessage.Builder::class.java) to ({ clazz: Class<out Any> ->
                 ReflectionRegistrationUtils.registerAll(
                     access,
                     clazz.name

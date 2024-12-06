@@ -12,34 +12,6 @@ found [here](https://www.graalvm.org/latest/reference-manual/native-image/dynami
 
 ## Usage
 
-#### 1) Add [jitpack.io](https://jitpack.io/) repository
-
-**Gradle (Groovy)**
-
-```
-repositories {
-  maven { url 'https://jitpack.io' }
-}
-```
-
-**Gradle (Kotlin):**
-
-```
-repositories {
-  maven { url = uri("https://jitpack.io") }
-}
-```
-**Maven**
-
-```
-<repositories>
-	<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
-	</repository>
-</repositories>
-```
-
 #### 2) Add dependency into your project:
    **Gradle (Groovy)**
 
