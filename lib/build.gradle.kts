@@ -42,4 +42,11 @@ publishing {
             }
         }
     }
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            artifact(tasks.named("javadocJar").get())
+            artifact(tasks.named("sourcesJar").get())
+        }
+    }
 }
